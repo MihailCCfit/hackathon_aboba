@@ -15,7 +15,7 @@ public class CategoryService {
     private final UserService userService;
 
     public List<Category> getAllCategoriesByUser(User user) {
-        throw new UnsupportedOperationException();
+        return categoryRepository.findByUser_Id(user.getId());
     }
 
     public Category createCategory(User user, Category category) {
@@ -24,5 +24,13 @@ public class CategoryService {
         Category newCategory = categoryRepository.save(category);
         userService.createOrUpdateUser(user);
         return newCategory;
+    }
+
+    public Category removeCategory(User user, Category category) {
+        Category categoryToRemove = categoryRepository.findByTitleAndUser_Id(category.getTitle(), user.getId());
+        if (categoryToRemove != null) {
+            categoryRepository.delete(categoryToRemove);
+        }
+        return categoryToRemove;
     }
 }
