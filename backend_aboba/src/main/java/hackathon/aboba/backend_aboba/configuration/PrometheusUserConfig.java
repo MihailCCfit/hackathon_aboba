@@ -17,19 +17,19 @@ import org.springframework.stereotype.Component;
 public class PrometheusUserConfig implements ApplicationListener<ApplicationReadyEvent> {
     private final UserService userService;
     @Value("${name.prometheus}")
-    public String NAME;
+    public String name;
     @Value("${jwt.prometheus}")
-    public String JWT;
+    public String jwt;
 
 
     @Override
     public void onApplicationEvent(final ApplicationReadyEvent event) {
-        var res = userService.findUser(NAME);
+        var res = userService.findUser(name);
         if (res == null) {
             User user = new User();
-            user.setUsername(NAME);
+            user.setUsername(name);
             res = userService.createOrUpdateUser(user);
         }
-        userService.updateAccessToken(res, SHA256Utils.calculateSHA256(JWT));
+        userService.updateAccessToken(res, SHA256Utils.calculateSHA256(jwt));
     }
 }

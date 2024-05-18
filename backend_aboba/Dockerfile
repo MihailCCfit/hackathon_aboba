@@ -11,5 +11,3 @@ RUN mkdir /app
 COPY --from=build /home/gradle/src/build/libs/backend_aboba-0.0.1-SNAPSHOT.jar /app/backend_aboba-0.0.1-SNAPSHOT.jar
 
 ENTRYPOINT ["java", "-jar", "/app/backend_aboba-0.0.1-SNAPSHOT.jar"]
-
-#a
