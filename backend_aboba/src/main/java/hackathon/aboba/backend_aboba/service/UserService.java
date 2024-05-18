@@ -22,7 +22,7 @@ public class UserService {
     }
 
     public User findUserOrThrow(String username) {
-        User user = userRepository.findByUsername(username);
+        var user = userRepository.findByUsername(username);
         if (user == null) {
             ServerExceptions.USER_NOT_FOUND.throwException();
         }

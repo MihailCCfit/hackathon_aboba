@@ -9,7 +9,7 @@ group = 'hackathon.aboba'
 version = '0.0.1-SNAPSHOT'
 
 java {
-	sourceCompatibility = '21'
+	sourceCompatibility = '17'
 }
 
 configurations {
@@ -37,6 +37,9 @@ dependencies {
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	implementation 'com.auth0:java-jwt:4.3.0'
 	implementation 'com.squareup.okhttp:okhttp:2.7.5'
+
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	runtimeOnly 'io.micrometer:micrometer-registry-prometheus'
 }
 
 tasks.named('test') {

@@ -1,12 +1,41 @@
 version: "3.9"
 
 services:
-  database:
+  database_postgres:
     image: postgres:15.3
-    container_name: database
+    container_name: database_postgres
     environment:
       - POSTGRES_USER=user
       - POSTGRES_PASSWORD=pass
       - POSTGRES_DB=db
     ports:
-      - 5432:5432
+      - "5432:5432"
+
+  abobabackend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: abobabackend
+    ports:
+      - "8080:8080"
+    restart: always
+
+
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
+    depends_on:
+      - abobabackend
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    depends_on:
+      - prometheus
