@@ -68,4 +68,10 @@ public class AuthenticationService {
             ServerExceptions.ILLEGAL_REFRESH_TOKEN.throwException();
         }
     }
+
+    public User logout(User user) {
+        user.setAccessToken(null);
+        user.setRefreshToken(null);
+        return userService.createOrUpdateUser(user);
+    }
 }

@@ -1,9 +1,11 @@
 package hackathon.aboba.backend_aboba.controller;
 
 import hackathon.aboba.backend_aboba.dto.UserDto;
+import hackathon.aboba.backend_aboba.model.User;
 import hackathon.aboba.backend_aboba.service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -29,5 +31,12 @@ public class AuthenticationController {
             @RequestHeader(value = "Authorization") String token
     ) {
         return authenticationService.refreshToken(token).toUserDto();
+    }
+
+    @GetMapping("/logout")
+    public UserDto logout(
+            @AuthenticationPrincipal User user
+    ) {
+        return authenticationService.logout(user).toUserDto();
     }
 }
