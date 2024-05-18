@@ -9,6 +9,7 @@ import hackathon.aboba.backend_aboba.exception.ServerExceptions;
 import hackathon.aboba.backend_aboba.service.AuthenticationService;
 import hackathon.aboba.backend_aboba.service.UserService;
 import hackathon.aboba.backend_aboba.utils.JwtUtils;
+import hackathon.aboba.backend_aboba.utils.TokenUtils;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -30,8 +31,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private final AuthenticationService authenticationService;
     private final JwtUtils jwtUtils;
 
-    private static final String BEARER_PREFIX = "Bearer ";
-
     private final ExceptionHandlingController exceptionHandlingController;
 
     @Override
@@ -51,7 +50,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             return;
         }
         try {
-            var token = authorizationHeader.substring(BEARER_PREFIX.length());
+            var token = authorizationHeader.substring(TokenUtils.BEARER_PREFIX.length());
             var decodedJWT = jwtUtils.decodeJWT(token);
             var username = decodedJWT.getSubject();
             log.info("User trying authorize: {}", username);
@@ -78,10 +77,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             log.info("User {} is authenticated", username);
             filterChain.doFilter(request, response);
         } catch (TokenExpiredException e) {
-            log.warn(
-                    "Token expired {}",
-                    request.getHeader(HttpHeaders.AUTHORIZATION).substring(BEARER_PREFIX.length())
-            );
             exceptionHandlingController.handle(response, ServerExceptions.ACCESS_TOKEN_EXPIRED.getServerException());
         } catch (JWTVerificationException e) {
             exceptionHandlingController.handle(response, ServerExceptions.ILLEGAL_ACCESS_TOKEN.getServerException());
@@ -92,7 +87,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             String authHeader,
             HttpServletResponse response
     ) throws IOException {
-        if (authHeader == null || !authHeader.startsWith(BEARER_PREFIX)) {
+        if (authHeader == null || !authHeader.startsWith(TokenUtils.BEARER_PREFIX)) {
             exceptionHandlingController.handle(response, ServerExceptions.NO_ACCESS_TOKEN.getServerException());
             return false;
         }

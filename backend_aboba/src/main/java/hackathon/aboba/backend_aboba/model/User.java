@@ -1,5 +1,6 @@
 package hackathon.aboba.backend_aboba.model;
 
+import hackathon.aboba.backend_aboba.dto.UserDto;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,5 +24,9 @@ public class User {
     private String username;
     private String accessToken;
     private String refreshToken;
+
+    public UserDto toUserDto() {
+        return new UserDto(username, accessToken, refreshToken);
+    }
 }
 

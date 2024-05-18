@@ -28,4 +28,12 @@ public class UserService {
         }
         return user;
     }
+
+    public User findUser(String username) {
+        return userRepository.findByUsername(username);
+    }
+
+    public User createUser(User newUser) {
+        return userRepository.save(newUser);
+    }
 }

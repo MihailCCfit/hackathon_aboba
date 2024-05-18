@@ -25,9 +25,9 @@ public class JwtUtils {
     private Long refreshTokenLifetime;
 
     @Value("${security.secret}")
-    private static String secret;
+    private String secret;
 
-    public Tokens createTokens(User user) {
+    public void createTokensForUser(User user) {
         var username = user.getUsername();
         var algorithm = Algorithm.HMAC256(secret.getBytes());
         var accessToken =
@@ -46,18 +46,11 @@ public class JwtUtils {
                         .sign(algorithm);
         userService.updateAccessToken(user, accessToken);
         userService.updateRefreshToken(user, refreshToken);
-        return new Tokens(accessToken, refreshToken);
     }
 
     public DecodedJWT decodeJWT(String token) {
         var algorithm = Algorithm.HMAC256(secret);
         var verifier = JWT.require(algorithm).build();
         return verifier.verify(token);
-    }
-
-    public record Tokens(
-            String accessToken,
-            String refreshToken
-    ) {
     }
 }

@@ -27,7 +27,7 @@ public enum ServerExceptions {
         this.serverException = serverException;
     }
 
-    public void throwException() {
+    public void throwException() throws ServerException {
         throw serverException;
     }
 
