@@ -3,6 +3,7 @@ package hackathon.aboba.backend_aboba.model;
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 
+import hackathon.aboba.backend_aboba.dto.OperationDto;
 import hackathon.aboba.backend_aboba.model.enums.OperationType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -47,4 +48,13 @@ public class Operation {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User user;
+
+    public OperationDto toOperationDto() {
+        return new OperationDto(
+                category.toCategoryDto(),
+                date,
+                sum,
+                operationType
+        );
+    }
 }
