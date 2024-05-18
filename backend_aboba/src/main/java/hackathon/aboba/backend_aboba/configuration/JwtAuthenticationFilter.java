@@ -65,8 +65,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 log.warn("It's not current access token {}", username);
                 exceptionHandlingController.handle(
                         response,
-                        ServerExceptions.ACCESS_TOKEN_PROBLEM
-                                .getServerExceptionWithMoreInfo("It's not current access token")
+                        ServerExceptions.getServerExceptionWithMoreInfo(
+                                ServerExceptions.ACCESS_TOKEN_PROBLEM.getServerException(),
+                                "It's not current access token"
+                        )
                 );
             }
             var authentication =

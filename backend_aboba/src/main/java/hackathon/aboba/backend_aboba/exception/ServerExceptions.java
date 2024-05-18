@@ -31,7 +31,14 @@ public enum ServerExceptions {
         throw serverException;
     }
 
-    public ServerException getServerExceptionWithMoreInfo(String moreInfo) {
+    public void throwException(String moreInfo) throws ServerException {
+        throw getServerExceptionWithMoreInfo(this.getServerException(), moreInfo);
+    }
+
+    public static ServerException getServerExceptionWithMoreInfo(
+            ServerException serverException,
+            String moreInfo
+    ) {
         return serverException.getServerExceptionWithMoreInfo(moreInfo);
     }
 }
