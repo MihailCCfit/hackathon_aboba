@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/ping")
 @RequiredArgsConstructor
 public class PingController {
-    @GetMapping("/ping")
+    @GetMapping
     public String ping() {
         return "Pong!";
     }
