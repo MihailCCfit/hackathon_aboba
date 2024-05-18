@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.exceptions.TokenExpiredException;
-import hackathon.aboba.backend_aboba.controller.ExceptionHandlingController;
+import hackathon.aboba.backend_aboba.controller.ExceptionHandler;
 import hackathon.aboba.backend_aboba.exception.ServerExceptions;
 import hackathon.aboba.backend_aboba.service.AuthenticationService;
 import hackathon.aboba.backend_aboba.service.UserService;
@@ -32,7 +32,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private final AuthenticationService authenticationService;
     private final JwtUtils jwtUtils;
 
-    private final ExceptionHandlingController exceptionHandlingController;
+    private final ExceptionHandler exceptionHandler;
 
     @Override
     protected void doFilterInternal(
@@ -63,7 +63,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
             if (!oldToken.equals(SHA256Utils.calculateSHA256(token))) {
                 log.warn("It's not current access token {}", username);
-                exceptionHandlingController.handle(
+                exceptionHandler.handle(
                         response,
                         ServerExceptions.getServerExceptionWithMoreInfo(
                                 ServerExceptions.ACCESS_TOKEN_PROBLEM.getServerException(),
@@ -80,9 +80,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             log.info("User {} is authenticated", username);
             filterChain.doFilter(request, response);
         } catch (TokenExpiredException e) {
-            exceptionHandlingController.handle(response, ServerExceptions.ACCESS_TOKEN_EXPIRED.getServerException());
+            exceptionHandler.handle(response, ServerExceptions.ACCESS_TOKEN_EXPIRED.getServerException());
         } catch (JWTVerificationException e) {
-            exceptionHandlingController.handle(response, ServerExceptions.ILLEGAL_ACCESS_TOKEN.getServerException());
+            exceptionHandler.handle(response, ServerExceptions.ILLEGAL_ACCESS_TOKEN.getServerException());
         }
     }
 
@@ -91,7 +91,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             HttpServletResponse response
     ) throws IOException {
         if (authHeader == null || !authHeader.startsWith(TokenUtils.BEARER_PREFIX)) {
-            exceptionHandlingController.handle(response, ServerExceptions.NO_ACCESS_TOKEN.getServerException());
+            exceptionHandler.handle(response, ServerExceptions.NO_ACCESS_TOKEN.getServerException());
             return false;
         }
         return true;
@@ -99,7 +99,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private boolean validateToken(String token, HttpServletResponse response) throws IOException {
         if (token == null || token.isEmpty()) {
-            exceptionHandlingController.handle(response, ServerExceptions.NO_ACCESS_TOKEN.getServerException());
+            exceptionHandler.handle(response, ServerExceptions.NO_ACCESS_TOKEN.getServerException());
             return false;
         }
         return true;
