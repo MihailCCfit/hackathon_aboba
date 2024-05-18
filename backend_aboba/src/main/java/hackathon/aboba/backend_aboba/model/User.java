@@ -1,6 +1,7 @@
 package hackathon.aboba.backend_aboba.model;
 
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import hackathon.aboba.backend_aboba.dto.UserDto;
@@ -35,6 +36,9 @@ public class User {
 
     @OneToMany(mappedBy = "user", orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Category> categories = new HashSet<>();
+
+    @OneToMany(mappedBy = "user", orphanRemoval = true)
+    private Set<Operation> operations = new LinkedHashSet<>();
 
     public UserDto toUserDto() {
         return new UserDto(username, accessToken, refreshToken);

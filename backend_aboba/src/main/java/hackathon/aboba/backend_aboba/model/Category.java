@@ -25,13 +25,12 @@ public class Category {
     private String title;
     private Long color;
     private String emoji;
-    private String token;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User user;
 
     public CategoryDto toCategoryDto() {
-        return new CategoryDto(title, color, emoji, token);
+        return new CategoryDto(title, color, emoji);
     }
 }
