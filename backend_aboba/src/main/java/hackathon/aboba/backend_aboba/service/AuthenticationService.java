@@ -14,7 +14,8 @@ import org.springframework.stereotype.Service;
 public class AuthenticationService {
     public static final Set<String> NO_AUTH_ENDPOINTS = Set.of(
             "/api/v1/accounts/login",
-            "/api/v1/accounts/token/refresh"
+            "/api/v1/accounts/token/refresh",
+            "/error"
     );
 
     private final YandexIdService yandexIdService;
@@ -32,7 +33,7 @@ public class AuthenticationService {
         if (user == null) {
             User newUser = new User();
             newUser.setUsername(username);
-            user = userService.createUser(newUser);
+            user = userService.createOrUpdateUser(newUser);
         }
         jwtUtils.createTokensForUser(user);
         return user;

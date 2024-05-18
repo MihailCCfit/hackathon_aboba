@@ -33,7 +33,7 @@ public class UserService {
         return userRepository.findByUsername(username);
     }
 
-    public User createUser(User newUser) {
-        return userRepository.save(newUser);
+    public User createOrUpdateUser(User user) {
+        return userRepository.save(user);
     }
 }

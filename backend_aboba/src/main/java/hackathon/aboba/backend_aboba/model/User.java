@@ -5,6 +5,7 @@ import java.util.Set;
 
 import hackathon.aboba.backend_aboba.dto.UserDto;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -32,11 +33,10 @@ public class User {
     private String accessToken;
     private String refreshToken;
 
-    @OneToMany(mappedBy = "user", orphanRemoval = true)
+    @OneToMany(mappedBy = "user", orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Category> categories = new HashSet<>();
 
     public UserDto toUserDto() {
         return new UserDto(username, accessToken, refreshToken);
     }
 }
-

@@ -1,6 +1,8 @@
 package hackathon.aboba.backend_aboba.model;
 
+import hackathon.aboba.backend_aboba.dto.CategoryDto;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -25,8 +27,11 @@ public class Category {
     private String emoji;
     private String token;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User user;
 
+    public CategoryDto toCategoryDto() {
+        return new CategoryDto(title, color, emoji, token);
+    }
 }
