@@ -9,6 +9,7 @@ import hackathon.aboba.backend_aboba.exception.ServerExceptions;
 import hackathon.aboba.backend_aboba.service.AuthenticationService;
 import hackathon.aboba.backend_aboba.service.UserService;
 import hackathon.aboba.backend_aboba.utils.JwtUtils;
+import hackathon.aboba.backend_aboba.utils.SHA256Utils;
 import hackathon.aboba.backend_aboba.utils.TokenUtils;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -60,7 +61,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 return;
             }
 
-            if (!oldToken.equals(token)) {
+            if (!oldToken.equals(SHA256Utils.calculateSHA256(token))) {
                 log.warn("It's not current access token {}", username);
                 exceptionHandlingController.handle(
                         response,

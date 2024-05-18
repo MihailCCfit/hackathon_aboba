@@ -7,7 +7,6 @@ import hackathon.aboba.backend_aboba.utils.JwtUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Slf4j
@@ -26,7 +25,6 @@ public class AuthenticationService {
         return !NO_AUTH_ENDPOINTS.contains(path);
     }
 
-    @Transactional
     public User login(String token) {
         var response = yandexIdService.getId(yandexIdService.parseToken(token));
         String username = response.id();

@@ -44,8 +44,10 @@ public class JwtUtils {
                         .withIssuer("refresh")
                         .withIssuedAt(new Date())
                         .sign(algorithm);
-        userService.updateAccessToken(user, accessToken);
-        userService.updateRefreshToken(user, refreshToken);
+        userService.updateAccessToken(user, SHA256Utils.calculateSHA256(accessToken));
+        userService.updateRefreshToken(user, SHA256Utils.calculateSHA256(refreshToken));
+        user.setAccessToken(accessToken);
+        user.setRefreshToken(refreshToken);
     }
 
     public DecodedJWT decodeJWT(String token) {
