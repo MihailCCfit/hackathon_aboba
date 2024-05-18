@@ -1,7 +1,5 @@
 package hackathon.aboba.backend_aboba.exception;
 
-import java.util.Map;
-
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
@@ -25,33 +23,15 @@ public enum ServerExceptions {
 
     private final ServerException serverException;
 
-    ServerExceptions(HttpStatus httpStatus, String message, String moreInfo) {
-        serverException = new ServerException(httpStatus, message, moreInfo);
-    }
-
     ServerExceptions(ServerException serverException) {
         this.serverException = serverException;
-    }
-
-    public ServerExceptions message(String message) {
-        this.serverException.setCode(message);
-        return this;
-    }
-
-    public ServerExceptions moreInfo(String moreInfo) {
-        this.serverException.setMessage(moreInfo);
-        return this;
     }
 
     public void throwException() {
         throw serverException;
     }
 
-    public Map<String, Object> getAnswer() {
-        return serverException.getAnswer();
-    }
-
-    public int status() {
-        return serverException.status.value();
+    public void throwException(String moreInfo) {
+        ServerException.throwException(serverException, moreInfo);
     }
 }

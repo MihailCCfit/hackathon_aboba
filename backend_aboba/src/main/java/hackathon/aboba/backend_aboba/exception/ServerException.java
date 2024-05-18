@@ -10,9 +10,9 @@ import org.springframework.http.HttpStatus;
 @Getter
 @Setter
 public class ServerException extends RuntimeException {
-    HttpStatus status;
-    String code;
-    String message;
+    private final HttpStatus status;
+    private final String code;
+    private final String message;
 
     public ServerException(HttpStatus status, String code, String message) {
         this.status = status;
@@ -28,16 +28,8 @@ public class ServerException extends RuntimeException {
         this(status, status.name(), status.name());
     }
 
-    public static void throwException(HttpStatus httpStatus, String message, String moreInfo) {
-        throw new ServerException(httpStatus, message, moreInfo);
-    }
-
-    public static void throwException(HttpStatus httpStatus, String message) {
-        throw new ServerException(httpStatus, message, message);
-    }
-
-    public static void throwException(HttpStatus httpStatus) {
-        throw new ServerException(httpStatus, httpStatus.name(), "");
+    public static void throwException(ServerException serverException, String moreInfo) {
+        throw new ServerException(serverException.status, serverException.code, moreInfo);
     }
 
     public Map<String, Object> getAnswer() {

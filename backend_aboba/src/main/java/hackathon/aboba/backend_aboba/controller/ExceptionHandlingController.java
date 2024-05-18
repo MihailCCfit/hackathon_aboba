@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @Slf4j
 public class ExceptionHandlingController {
     @ExceptionHandler(ServerException.class)
-    private void handle(HttpServletResponse response, ServerException serverException) {
+    private void handle(HttpServletResponse response, ServerException serverException) throws IOException {
         response.setStatus(serverException.getStatus().value());
         response.addHeader("Content-Type", MediaType.APPLICATION_JSON_VALUE);
         ObjectMapper mapper = new ObjectMapper();
@@ -24,7 +24,7 @@ public class ExceptionHandlingController {
             bw.write(mapper.writeValueAsString(serverException.getAnswer()));
         } catch (IOException e) {
             log.error(e.getMessage());
-            throw new RuntimeException(e);
+            throw new IOException(e);
         }
     }
 
