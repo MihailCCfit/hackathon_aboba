@@ -28,11 +28,15 @@ public class ServerException extends RuntimeException {
         this(status, status.name(), status.name());
     }
 
-    public static void throwException(ServerException serverException, String moreInfo) {
-        throw new ServerException(serverException.status, serverException.code, moreInfo);
+    public ServerException getServerExceptionWithMoreInfo(String moreInfo) {
+        return new ServerException(this.status, this.code, moreInfo);
     }
 
     public Map<String, Object> getAnswer() {
-        return Map.of("code", code, "message", message, "status", status.value());
+        return Map.of(
+                "status", status.value(),
+                "code", code,
+                "message", message
+        );
     }
 }

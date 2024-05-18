@@ -31,7 +31,7 @@ public enum ServerExceptions {
         throw serverException;
     }
 
-    public void throwException(String moreInfo) {
-        ServerException.throwException(serverException, moreInfo);
+    public ServerException getServerExceptionWithMoreInfo(String moreInfo) {
+        return serverException.getServerExceptionWithMoreInfo(moreInfo);
     }
 }
