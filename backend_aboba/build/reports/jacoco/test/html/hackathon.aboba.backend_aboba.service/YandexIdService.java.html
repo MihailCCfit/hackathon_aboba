@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>YandexIdService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">backend_aboba</a> &gt; <a href="index.source.html" class="el_package">hackathon.aboba.backend_aboba.service</a> &gt; <span class="el_source">YandexIdService.java</span></div><h1>YandexIdService.java</h1><pre class="source lang-java linenums">package hackathon.aboba.backend_aboba.service;
+
+import java.io.IOException;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.Response;
+import com.squareup.okhttp.ResponseBody;
+import hackathon.aboba.backend_aboba.dto.YandexIdResponse;
+import hackathon.aboba.backend_aboba.exception.ServerExceptions;
+import hackathon.aboba.backend_aboba.utils.TokenUtils;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+@Service
+<span class="fc" id="L18">@Slf4j</span>
+<span class="fc" id="L19">public class YandexIdService {</span>
+<span class="fc" id="L20">    private final OkHttpClient client = new OkHttpClient();</span>
+
+    @Value(&quot;${yandex.id.path}&quot;)
+    private String yandexIdPath;
+
+    public YandexIdResponse getId(String token) {
+<span class="fc" id="L26">        var request = new Request.Builder()</span>
+<span class="fc" id="L27">                .url(yandexIdPath)</span>
+<span class="fc" id="L28">                .addHeader(&quot;Authorization&quot;, &quot;Bearer &quot; + token)</span>
+<span class="fc" id="L29">                .build();</span>
+
+<span class="fc" id="L31">        var call = client.newCall(request);</span>
+<span class="fc" id="L32">        Response response = null;</span>
+        try {
+<span class="fc" id="L34">            response = call.execute();</span>
+<span class="nc" id="L35">        } catch (IOException e) {</span>
+<span class="nc" id="L36">            ServerExceptions.ILLEGAL_YANDEX_TOKEN.throwException();</span>
+<span class="fc" id="L37">        }</span>
+<span class="fc" id="L38">        try (ResponseBody body = response.body()) {</span>
+<span class="pc bpc" id="L39" title="1 of 2 branches missed.">            if (response.code() != 200) {</span>
+<span class="fc" id="L40">                log.info(&quot;Error with yandex token: {}&quot;, body.toString());</span>
+<span class="nc" id="L41">                ServerExceptions.ILLEGAL_YANDEX_TOKEN.throwException();</span>
+            }
+<span class="nc" id="L43">            var responseString = body.string();</span>
+<span class="nc" id="L44">            return new ObjectMapper().readValue(</span>
+                    responseString,
+                    YandexIdResponse.class
+            );
+<span class="nc" id="L48">        } catch (IOException e) {</span>
+<span class="nc" id="L49">            log.error(e.getMessage());</span>
+<span class="nc" id="L50">            ServerExceptions.ILLEGAL_YANDEX_TOKEN.throwException();</span>
+<span class="nc" id="L51">            return null;</span>
+        }
+    }
+
+    public String parseToken(
+            String authorization
+    ) {
+<span class="pc bpc" id="L58" title="1 of 4 branches missed.">        if (authorization == null || !authorization.contains(TokenUtils.BEARER_PREFIX)) {</span>
+<span class="nc" id="L59">            ServerExceptions.ILLEGAL_YANDEX_TOKEN.throwException();</span>
+<span class="nc" id="L60">            return null;</span>
+        }
+<span class="fc" id="L62">        return authorization.substring(TokenUtils.BEARER_PREFIX.length());</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
