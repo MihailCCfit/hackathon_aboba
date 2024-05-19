@@ -45,7 +45,7 @@ jobs:
       - name: build
 
         run: |
-          cd ./backend;
+          cd ./backend_aboba;
           ls -al;
           docker ps;
           docker build -t aboba_backend:latest .;
@@ -78,5 +78,5 @@ jobs:
           SSH_HOST: ${{ secrets.SSH_HOST }}
         run: |
           scp -oStrictHostKeyChecking=no /tmp/aboba_backend.tar cloud:/tmp;
-          scp -oStrictHostKeyChecking=no ./backend/update.sh cloud:/tmp;
+          scp -oStrictHostKeyChecking=no ./backend_aboba/update.sh cloud:/tmp;
           ssh cloud 'cd /tmp; ls -l; sh ./update.sh;';
