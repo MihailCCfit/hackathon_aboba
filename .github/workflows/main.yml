@@ -19,28 +19,28 @@ jobs:
         run: pwd
 
       - name: Update db url
-        run: sed -i 's/<cluster_link>/${{ secrets.CLUSTER_LINK }}/' backend/src/main/resources/application-production.properties
+        run: sed -i 's/<cluster_link>/${{ secrets.CLUSTER_LINK }}/' backend_aboba/src/main/resources/application-production.properties
 
       - name: Update db port
-        run: sed -i 's/<port>/${{ secrets.PORT }}/' backend/src/main/resources/application-production.properties
+        run: sed -i 's/<port>/${{ secrets.PORT }}/' backend_aboba/src/main/resources/application-production.properties
 
       - name: Update db name
-        run: sed -i 's/<db>/${{ secrets.DB }}/' backend/src/main/resources/application-production.properties
+        run: sed -i 's/<db>/${{ secrets.DB }}/' backend_aboba/src/main/resources/application-production.properties
 
       - name: Update db username
-        run: sed -i 's/<username>/${{ secrets.USERNAME }}/' backend/src/main/resources/application-production.properties
+        run: sed -i 's/<username>/${{ secrets.USERNAME }}/' backend_aboba/src/main/resources/application-production.properties
 
       - name: Update db password
-        run: sed -i 's/<password>/${{ secrets.PASSWORD }}/' backend/src/main/resources/application-production.properties
+        run: sed -i 's/<password>/${{ secrets.PASSWORD }}/' backend_aboba/src/main/resources/application-production.properties
 
       - name: Update security secret
-        run: sed -i 's/<security_secret>/${{ secrets.SECURITYSERCRET }}/' backend/src/main/resources/application-production.properties
+        run: sed -i 's/<security_secret>/${{ secrets.SECURITYSERCRET }}/' backend_aboba/src/main/resources/application-production.properties
 
       - name: Update jwt prometheus
-        run: sed -i 's/<jwt_prometheus>/${{ secrets.JWT_PROMETHEUS }}/' backend/src/main/resources/application-production.properties
+        run: sed -i 's/<jwt_prometheus>/${{ secrets.JWT_PROMETHEUS }}/' backend_aboba/src/main/resources/application-production.properties
 
       - name: Update name prometheus
-        run: sed -i 's/<name_prometheus>/${{ secrets.NAME_PROMETHEUS }}/' backend/src/main/resources/application-production.properties
+        run: sed -i 's/<name_prometheus>/${{ secrets.NAME_PROMETHEUS }}/' backend_aboba/src/main/resources/application-production.properties
 
       - name: build
         run: |
