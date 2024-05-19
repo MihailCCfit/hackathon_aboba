@@ -7,14 +7,16 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class UserServiceTest extends AbstractIntegrationTest {
+class UserServiceTest extends AbstractIntegrationTest {
 
     @Autowired
     private UserService userService;
+
     @Autowired
     private JwtUtils jwtUtils;
+
     @Test
-    public void testTokens() {
+    void testTokens() {
         var user = userService.findUserOrThrow("admin");
         jwtUtils.createTokensForUser(user);
         var token = user.getAccessToken();
