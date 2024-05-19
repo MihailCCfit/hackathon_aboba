@@ -34,10 +34,10 @@ public class User {
     private String accessToken;
     private String refreshToken;
 
-    @OneToMany(mappedBy = "user", orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "user", orphanRemoval = true, fetch = FetchType.EAGER/*, cascade = CascadeType.MERGE*/)
     private Set<Category> categories = new HashSet<>();
 
-    @OneToMany(mappedBy = "user", orphanRemoval = true)
+    @OneToMany(mappedBy = "user", orphanRemoval = true, fetch = FetchType.EAGER/*, cascade = CascadeType.MERGE*/)
     private Set<Operation> operations = new LinkedHashSet<>();
 
     public UserDto toUserDto() {

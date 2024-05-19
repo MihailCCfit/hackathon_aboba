@@ -32,7 +32,7 @@ public class OperationController {
     }
 
     @GetMapping("/all")
-    public List<OperationDto> getAllCategories(
+    public List<OperationDto> getAllOperations(
             @AuthenticationPrincipal User user
     ) {
         return operationService.getAllOperationsByUser(user).stream().map(Operation::toOperationDto).toList();

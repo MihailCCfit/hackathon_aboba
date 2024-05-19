@@ -41,7 +41,7 @@ public class CategoryController {
     @DeleteMapping
     public CategoryDto deleteCategory(
             @AuthenticationPrincipal User user,
-            CategoryDto categoryDto
+            @RequestBody CategoryDto categoryDto
     ) {
         return categoryService.removeCategory(user, categoryDto.toCategory()).toCategoryDto();
     }
