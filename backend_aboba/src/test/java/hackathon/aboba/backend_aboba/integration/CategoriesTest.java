@@ -3,41 +3,43 @@ package hackathon.aboba.backend_aboba.integration;
 import java.util.List;
 
 import hackathon.aboba.backend_aboba.dto.CategoryDto;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.MediaType;
 
+import static hackathon.aboba.backend_aboba.TestUtils.getCategoryUrl;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 
 class CategoriesTest extends AbstractIntegrationTest {
+    private static final CategoryDto category = new CategoryDto("category", 5L, "emoji");
+
+    @BeforeEach
+    void setup() throws Exception {
+        addCategory();
+    }
 
     @Test
     void addCategoriesTest() throws Exception {
-        var body = new CategoryDto("category", 5L, "emoji");
-        addCategory(body);
-
-        mockMvc.perform(get("/api/v1/categories/all"))
-                .andExpect(content().string(objectMapper.writeValueAsString(List.of(body))));
+        mockMvc.perform(get(getCategoryUrl() + "/all"))
+                .andExpect(content().string(objectMapper.writeValueAsString(List.of(category))));
     }
 
     @Test
     void deleteCategoryTest() throws Exception {
-        var body = new CategoryDto("category", 5L, "emoji");
-        addCategory(body);
-
-        mockMvc.perform(delete("/api/v1/categories")
+        mockMvc.perform(delete(getCategoryUrl())
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(body)))
-                .andExpect(content().string(objectMapper.writeValueAsString(body)));
+                        .content(objectMapper.writeValueAsString(category)))
+                .andExpect(content().string(objectMapper.writeValueAsString(category)));
 
-        mockMvc.perform(get("/api/v1/categories/all"))
+        mockMvc.perform(get(getCategoryUrl() + "/all"))
                 .andExpect(content().string(objectMapper.writeValueAsString(List.of())));
     }
 
-    private void addCategory(CategoryDto category) throws Exception {
-        mockMvc.perform(post("/api/v1/categories")
+    private void addCategory() throws Exception {
+        mockMvc.perform(post(getCategoryUrl())
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(category)));
     }

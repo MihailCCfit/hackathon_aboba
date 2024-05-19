@@ -41,7 +41,7 @@ public class OperationController {
     @DeleteMapping
     public OperationDto deleteOperation(
             @AuthenticationPrincipal User user,
-            OperationDto operationDto
+            @RequestBody OperationDto operationDto
     ) {
         return operationService.removeOperation(user, operationDto.toOperation()).toOperationDto();
     }
