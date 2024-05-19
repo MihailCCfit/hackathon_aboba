@@ -36,7 +36,7 @@ class OperationsTest extends AbstractIntegrationTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(category)));
 
-        addOperation(operation);
+        addOperation();
     }
 
     @Test
@@ -71,9 +71,9 @@ class OperationsTest extends AbstractIntegrationTest {
                 .andExpect(content().string(objectMapper.writeValueAsString(List.of())));
     }
 
-    private void addOperation(OperationDto operationDto) throws Exception {
+    private void addOperation() throws Exception {
         mockMvc.perform(post(getOperationsUrl())
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(operationDto)));
+                .content(objectMapper.writeValueAsString(operation)));
     }
 }
