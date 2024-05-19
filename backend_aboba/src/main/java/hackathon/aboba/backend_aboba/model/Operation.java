@@ -34,7 +34,7 @@ public class Operation {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER/*, cascade = CascadeType.MERGE*/)
     @JoinColumn(name = "category_id")
     private Category category;
 
@@ -45,7 +45,7 @@ public class Operation {
     @Enumerated(EnumType.STRING)
     private OperationType operationType;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER/*, cascade = CascadeType.MERGE*/)
     @JoinColumn(name = "user_id")
     private User user;
 

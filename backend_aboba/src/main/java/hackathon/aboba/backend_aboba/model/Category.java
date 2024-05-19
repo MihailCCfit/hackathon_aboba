@@ -8,6 +8,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,6 +18,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
+@Table(name = "Category", uniqueConstraints = {
+        @UniqueConstraint(name = "uc_category_title_user_id", columnNames = {"title", "user_id"})
+})
 @NoArgsConstructor
 @AllArgsConstructor
 public class Category {
