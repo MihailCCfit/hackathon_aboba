@@ -1,5 +1,3 @@
-
-
 name: CI
 
 on:
@@ -8,6 +6,73 @@ on:
   workflow_dispatch:
 
 jobs:
+  backend_job:
+    runs-on: ubuntu-latest
+#    runs-on: ubun
+    name: building and ssh
+    environment: backend
+    steps:
+      - uses: actions/checkout@v3
+      - name: directory tree
+        run: echo tree
+
+      - name: aboba
+        run: pwd
+
+      - name: Update db url
+        run: sed -i 's/<cluster_link>/${{ secrets.CLUSTER_LINK }}/' backend/src/main/resources/application.properties
+
+      - name: Update db port
+        run: sed -i 's/<port>/${{ secrets.PORT }}/' backend/src/main/resources/application.properties
+
+      - name: Update db name
+        run: sed -i 's/<db>/${{ secrets.DB }}/' backend/src/main/resources/application.properties
+
+      - name: Update db username
+        run: sed -i 's/<username>/${{ secrets.USERNAME }}/' backend/src/main/resources/application.properties
+
+      - name: Update db password
+        run: sed -i 's/<password>/${{ secrets.PASSWORD }}/' backend/src/main/resources/application.properties
+
+      - name: build
+
+        run: |
+          cd ./backend;
+          ls -al;
+          docker ps;
+          docker build -t timetable_backend:latest .;
+          docker image ls;
+          docker save -o /tmp/timetable_backend.tar timetable_backend:latest;
+          ls -al;
+          echo "ABOBA";
+          ls /tmp -al;
+
+      - name: Configure SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_KEY" > ~/.ssh/cloud.key
+          chmod 600 ~/.ssh/cloud.key
+          cat >>~/.ssh/config <<END
+            Host cloud
+            HostName $SSH_HOST
+            User $SSH_USER
+            IdentityFile ~/.ssh/cloud.key
+            StrictHostKeyChecking no
+          END
+        env:
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_KEY: ${{ secrets.KEYYA }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+      #      - uses: actions/checkout@v3
+      - name: deploy
+        env:
+          KEYYA: ${{ secrets.KEYYA }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+        run: |
+          scp -oStrictHostKeyChecking=no /tmp/timetable_backend.tar cloud:/tmp;
+          scp -oStrictHostKeyChecking=no ./backend/update.sh cloud:/tmp;
+          ssh cloud 'cd /tmp; ls -l; sh ./update.sh;';
 
 
 
