@@ -1,0 +1,156 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1716100094207,4,HTTP Request,200,,Thread Group 1-1,text,true,,425,130,1,3,http://localhost:8080/api/v1/ping,4,0,1
+1716100094212,1,HTTP Request,200,,Thread Group 1-1,text,true,,425,130,1,3,http://localhost:8080/api/v1/ping,1,0,0
+1716100094213,1,HTTP Request,200,,Thread Group 1-1,text,true,,425,130,1,3,http://localhost:8080/api/v1/ping,1,0,0
+1716100094214,1,HTTP Request,200,,Thread Group 1-1,text,true,,425,130,1,3,http://localhost:8080/api/v1/ping,1,0,0
+1716100094216,1,HTTP Request,200,,Thread Group 1-1,text,true,,425,130,1,3,http://localhost:8080/api/v1/ping,1,0,0
+1716100094207,11,HTTP Request,401,,Thread Group 3 3-1,text,false,,518,385,1,3,http://localhost:8080/api/v1/categories/all,10,0,1
+1716100094207,11,HTTP Request,401,,Thread Group 2 2-1,text,false,,518,474,1,3,http://localhost:8080/api/v1/categories,10,0,1
+1716100094217,1,HTTP Request,200,,Thread Group 1-1,text,true,,425,130,1,3,http://localhost:8080/api/v1/ping,1,0,0
+1716100094218,1,HTTP Request,200,,Thread Group 1-1,text,true,,425,130,1,3,http://localhost:8080/api/v1/ping,1,0,0
+1716100094219,1,HTTP Request,200,,Thread Group 1-1,text,true,,425,130,1,3,http://localhost:8080/api/v1/ping,1,0,0
+1716100094220,1,HTTP Request,200,,Thread Group 1-1,text,true,,425,130,1,3,http://localhost:8080/api/v1/ping,1,0,0
+1716100094221,1,HTTP Request,200,,Thread Group 1-1,text,true,,425,130,1,3,http://localhost:8080/api/v1/ping,1,0,0
+1716100094222,1,HTTP Request,200,,Thread Group 1-1,text,true,,425,130,1,3,http://localhost:8080/api/v1/ping,1,0,0
+1716100094224,1,HTTP Request,200,,Thread Group 1-1,text,true,,425,130,1,3,http://localhost:8080/api/v1/ping,1,0,0
+1716100094225,1,HTTP Request,200,,Thread Group 1-1,text,true,,425,130,1,3,http://localhost:8080/api/v1/ping,1,0,0
+1716100094226,1,HTTP Request,200,,Thread Group 1-1,text,true,,425,130,1,3,http://localhost:8080/api/v1/ping,1,0,0
+1716100094227,1,HTTP Request,200,,Thread Group 1-1,text,true,,425,130,1,3,http://localhost:8080/api/v1/ping,1,0,0
+1716100094218,31,HTTP Request,200,,Thread Group 3 3-1,text,true,,10442,385,1,2,http://localhost:8080/api/v1/categories/all,31,0,0
+1716100094218,54,HTTP Request,200,,Thread Group 2 2-1,text,true,,481,474,1,2,http://localhost:8080/api/v1/categories,54,0,0
+1716100094267,11,HTTP Request,200,,Thread Group 3 3-1,text,true,,10492,385,1,2,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100094278,10,HTTP Request,200,,Thread Group 3 3-1,text,true,,10542,385,1,2,http://localhost:8080/api/v1/categories/all,10,0,0
+1716100094272,17,HTTP Request,200,,Thread Group 2 2-1,text,true,,481,474,1,2,http://localhost:8080/api/v1/categories,17,0,0
+1716100094288,11,HTTP Request,200,,Thread Group 3 3-1,text,true,,10542,385,1,2,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100094289,15,HTTP Request,200,,Thread Group 2 2-1,text,true,,481,474,1,2,http://localhost:8080/api/v1/categories,15,0,0
+1716100094300,10,HTTP Request,200,,Thread Group 3 3-1,text,true,,10592,385,1,2,http://localhost:8080/api/v1/categories/all,9,0,0
+1716100094304,16,HTTP Request,200,,Thread Group 2 2-1,text,true,,481,474,1,2,http://localhost:8080/api/v1/categories,16,0,0
+1716100094310,11,HTTP Request,200,,Thread Group 3 3-1,text,true,,10642,385,1,2,http://localhost:8080/api/v1/categories/all,10,0,0
+1716100094321,11,HTTP Request,200,,Thread Group 3 3-1,text,true,,10642,385,1,2,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100094332,10,HTTP Request,200,,Thread Group 3 3-1,text,true,,10692,385,1,2,http://localhost:8080/api/v1/categories/all,10,0,0
+1716100094320,16,HTTP Request,200,,Thread Group 2 2-1,text,true,,481,474,1,2,http://localhost:8080/api/v1/categories,16,0,0
+1716100094343,11,HTTP Request,200,,Thread Group 3 3-1,text,true,,10692,385,1,2,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100094344,16,HTTP Request,200,,Thread Group 2 2-1,text,true,,481,474,1,1,http://localhost:8080/api/v1/categories,16,0,0
+1716100094361,17,HTTP Request,200,,Thread Group 2 2-1,text,true,,481,474,1,1,http://localhost:8080/api/v1/categories,17,0,0
+1716100094378,17,HTTP Request,200,,Thread Group 2 2-1,text,true,,481,474,1,1,http://localhost:8080/api/v1/categories,17,0,0
+1716100094395,15,HTTP Request,200,,Thread Group 2 2-1,text,true,,481,474,1,1,http://localhost:8080/api/v1/categories,15,0,0
+1716100095211,15,HTTP Request,200,,Thread Group 3 3-2,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,15,0,1
+1716100095227,12,HTTP Request,200,,Thread Group 3 3-2,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,12,0,0
+1716100095240,12,HTTP Request,200,,Thread Group 3 3-2,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,12,0,0
+1716100095252,21,HTTP Request,200,,Thread Group 3 3-2,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,21,0,0
+1716100095273,12,HTTP Request,200,,Thread Group 3 3-2,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100095309,12,HTTP Request,200,,Thread Group 3 3-2,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,12,0,0
+1716100095321,12,HTTP Request,200,,Thread Group 3 3-2,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,12,0,0
+1716100095333,11,HTTP Request,200,,Thread Group 3 3-2,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100095344,11,HTTP Request,200,,Thread Group 3 3-2,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100095355,11,HTTP Request,200,,Thread Group 3 3-2,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100096207,14,HTTP Request,200,,Thread Group 3 3-3,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,14,0,1
+1716100096221,11,HTTP Request,200,,Thread Group 3 3-3,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100096232,10,HTTP Request,200,,Thread Group 3 3-3,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,10,0,0
+1716100096242,12,HTTP Request,200,,Thread Group 3 3-3,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,12,0,0
+1716100096254,11,HTTP Request,200,,Thread Group 3 3-3,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100096295,12,HTTP Request,200,,Thread Group 3 3-3,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,12,0,0
+1716100096307,12,HTTP Request,200,,Thread Group 3 3-3,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,12,0,0
+1716100096319,11,HTTP Request,200,,Thread Group 3 3-3,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100096330,10,HTTP Request,200,,Thread Group 3 3-3,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,10,0,0
+1716100096340,11,HTTP Request,200,,Thread Group 3 3-3,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100097207,15,HTTP Request,200,,Thread Group 3 3-4,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,15,0,1
+1716100097222,11,HTTP Request,200,,Thread Group 3 3-4,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100097233,15,HTTP Request,200,,Thread Group 3 3-4,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,15,0,0
+1716100097279,13,HTTP Request,200,,Thread Group 3 3-4,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,13,0,0
+1716100097292,11,HTTP Request,200,,Thread Group 3 3-4,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100097303,12,HTTP Request,200,,Thread Group 3 3-4,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,12,0,0
+1716100097315,11,HTTP Request,200,,Thread Group 3 3-4,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100097326,10,HTTP Request,200,,Thread Group 3 3-4,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,10,0,0
+1716100097336,11,HTTP Request,200,,Thread Group 3 3-4,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100097347,10,HTTP Request,200,,Thread Group 3 3-4,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,10,0,0
+1716100098207,14,HTTP Request,200,,Thread Group 3 3-5,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,14,0,1
+1716100098221,18,HTTP Request,200,,Thread Group 3 3-5,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,18,0,0
+1716100098239,12,HTTP Request,200,,Thread Group 3 3-5,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,12,0,0
+1716100098279,12,HTTP Request,200,,Thread Group 3 3-5,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,12,0,0
+1716100098291,11,HTTP Request,200,,Thread Group 3 3-5,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100098302,10,HTTP Request,200,,Thread Group 3 3-5,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,10,0,0
+1716100098312,10,HTTP Request,200,,Thread Group 3 3-5,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,10,0,0
+1716100098323,9,HTTP Request,200,,Thread Group 3 3-5,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,9,0,0
+1716100098333,10,HTTP Request,200,,Thread Group 3 3-5,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,10,0,0
+1716100098343,11,HTTP Request,200,,Thread Group 3 3-5,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100099207,14,HTTP Request,200,,Thread Group 3 3-6,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,14,0,1
+1716100099221,12,HTTP Request,200,,Thread Group 3 3-6,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,12,0,0
+1716100099233,11,HTTP Request,200,,Thread Group 3 3-6,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100099244,12,HTTP Request,200,,Thread Group 3 3-6,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,12,0,0
+1716100099292,12,HTTP Request,200,,Thread Group 3 3-6,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,12,0,0
+1716100099304,10,HTTP Request,200,,Thread Group 3 3-6,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,10,0,0
+1716100099314,10,HTTP Request,200,,Thread Group 3 3-6,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,10,0,0
+1716100099324,11,HTTP Request,200,,Thread Group 3 3-6,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100099336,10,HTTP Request,200,,Thread Group 3 3-6,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,10,0,0
+1716100099346,10,HTTP Request,200,,Thread Group 3 3-6,text,true,,10892,385,1,1,http://localhost:8080/api/v1/categories/all,10,0,0
+1716100100208,21,HTTP Request,200,,Thread Group 3 3-7,text,true,,10892,385,1,2,http://localhost:8080/api/v1/categories/all,20,0,0
+1716100100207,30,HTTP Request,200,,Thread Group 2 2-2,text,true,,481,474,1,2,http://localhost:8080/api/v1/categories,30,0,2
+1716100100229,15,HTTP Request,200,,Thread Group 3 3-7,text,true,,10942,385,1,2,http://localhost:8080/api/v1/categories/all,15,0,0
+1716100100238,19,HTTP Request,200,,Thread Group 2 2-2,text,true,,481,474,1,2,http://localhost:8080/api/v1/categories,19,0,0
+1716100100258,19,HTTP Request,200,,Thread Group 2 2-2,text,true,,481,474,1,2,http://localhost:8080/api/v1/categories,19,0,0
+1716100100277,15,HTTP Request,200,,Thread Group 2 2-2,text,true,,481,474,1,2,http://localhost:8080/api/v1/categories,15,0,0
+1716100100245,12,HTTP Request,200,,Thread Group 3 3-7,text,true,,10992,385,1,2,http://localhost:8080/api/v1/categories/all,12,0,0
+1716100100300,11,HTTP Request,200,,Thread Group 3 3-7,text,true,,11142,385,1,2,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100100311,12,HTTP Request,200,,Thread Group 3 3-7,text,true,,11142,385,1,2,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100100292,16,HTTP Request,200,,Thread Group 2 2-2,text,true,,481,474,1,2,http://localhost:8080/api/v1/categories,16,0,0
+1716100100323,12,HTTP Request,200,,Thread Group 3 3-7,text,true,,11142,385,1,2,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100100327,17,HTTP Request,200,,Thread Group 2 2-2,text,true,,481,474,1,2,http://localhost:8080/api/v1/categories,17,0,0
+1716100100335,12,HTTP Request,200,,Thread Group 3 3-7,text,true,,11192,385,1,2,http://localhost:8080/api/v1/categories/all,12,0,0
+1716100100347,11,HTTP Request,200,,Thread Group 3 3-7,text,true,,11192,385,1,2,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100100344,16,HTTP Request,200,,Thread Group 2 2-2,text,true,,481,474,1,2,http://localhost:8080/api/v1/categories,16,0,0
+1716100100358,11,HTTP Request,200,,Thread Group 3 3-7,text,true,,11242,385,1,2,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100100360,15,HTTP Request,200,,Thread Group 2 2-2,text,true,,481,474,1,2,http://localhost:8080/api/v1/categories,15,0,0
+1716100100369,11,HTTP Request,200,,Thread Group 3 3-7,text,true,,11292,385,1,2,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100100375,17,HTTP Request,200,,Thread Group 2 2-2,text,true,,481,474,1,1,http://localhost:8080/api/v1/categories,17,0,0
+1716100100392,15,HTTP Request,200,,Thread Group 2 2-2,text,true,,481,474,1,1,http://localhost:8080/api/v1/categories,15,0,0
+1716100101207,16,HTTP Request,200,,Thread Group 3 3-8,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,16,0,1
+1716100101223,10,HTTP Request,200,,Thread Group 3 3-8,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,10,0,0
+1716100101233,10,HTTP Request,200,,Thread Group 3 3-8,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,10,0,0
+1716100101243,10,HTTP Request,200,,Thread Group 3 3-8,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,10,0,0
+1716100101253,10,HTTP Request,200,,Thread Group 3 3-8,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,10,0,0
+1716100101298,12,HTTP Request,200,,Thread Group 3 3-8,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100101310,11,HTTP Request,200,,Thread Group 3 3-8,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100101321,9,HTTP Request,200,,Thread Group 3 3-8,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,9,0,0
+1716100101330,9,HTTP Request,200,,Thread Group 3 3-8,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,9,0,0
+1716100101339,10,HTTP Request,200,,Thread Group 3 3-8,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,10,0,0
+1716100102208,14,HTTP Request,200,,Thread Group 3 3-9,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,14,0,0
+1716100102222,11,HTTP Request,200,,Thread Group 3 3-9,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100102233,11,HTTP Request,200,,Thread Group 3 3-9,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100102244,11,HTTP Request,200,,Thread Group 3 3-9,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,10,0,0
+1716100102255,10,HTTP Request,200,,Thread Group 3 3-9,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,10,0,0
+1716100102300,13,HTTP Request,200,,Thread Group 3 3-9,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,12,0,0
+1716100102313,11,HTTP Request,200,,Thread Group 3 3-9,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100102324,11,HTTP Request,200,,Thread Group 3 3-9,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100102335,11,HTTP Request,200,,Thread Group 3 3-9,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100102346,12,HTTP Request,200,,Thread Group 3 3-9,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,12,0,0
+1716100103209,14,HTTP Request,200,,Thread Group 3 3-10,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,14,0,0
+1716100103223,19,HTTP Request,200,,Thread Group 3 3-10,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,19,0,0
+1716100103267,14,HTTP Request,200,,Thread Group 3 3-10,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,14,0,0
+1716100103314,13,HTTP Request,200,,Thread Group 3 3-10,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,13,0,0
+1716100103328,11,HTTP Request,200,,Thread Group 3 3-10,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100103340,11,HTTP Request,200,,Thread Group 3 3-10,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,11,0,0
+1716100103351,22,HTTP Request,200,,Thread Group 3 3-10,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,22,0,0
+1716100103374,10,HTTP Request,200,,Thread Group 3 3-10,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,10,0,0
+1716100103384,10,HTTP Request,200,,Thread Group 3 3-10,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,10,0,0
+1716100103394,17,HTTP Request,200,,Thread Group 3 3-10,text,true,,11392,385,1,1,http://localhost:8080/api/v1/categories/all,17,0,0
+1716100106209,25,HTTP Request,200,,Thread Group 2 2-3,text,true,,481,474,1,1,http://localhost:8080/api/v1/categories,25,0,1
+1716100106235,16,HTTP Request,200,,Thread Group 2 2-3,text,true,,481,474,1,1,http://localhost:8080/api/v1/categories,16,0,0
+1716100106251,14,HTTP Request,200,,Thread Group 2 2-3,text,true,,481,474,1,1,http://localhost:8080/api/v1/categories,14,0,0
+1716100106265,15,HTTP Request,200,,Thread Group 2 2-3,text,true,,481,474,1,1,http://localhost:8080/api/v1/categories,15,0,0
+1716100106281,15,HTTP Request,200,,Thread Group 2 2-3,text,true,,481,474,1,1,http://localhost:8080/api/v1/categories,15,0,0
+1716100106296,15,HTTP Request,200,,Thread Group 2 2-3,text,true,,481,474,1,1,http://localhost:8080/api/v1/categories,15,0,0
+1716100106311,15,HTTP Request,200,,Thread Group 2 2-3,text,true,,481,474,1,1,http://localhost:8080/api/v1/categories,15,0,0
+1716100106326,15,HTTP Request,200,,Thread Group 2 2-3,text,true,,481,474,1,1,http://localhost:8080/api/v1/categories,15,0,0
+1716100106341,16,HTTP Request,200,,Thread Group 2 2-3,text,true,,481,474,1,1,http://localhost:8080/api/v1/categories,16,0,0
+1716100106365,18,HTTP Request,200,,Thread Group 2 2-3,text,true,,481,474,1,1,http://localhost:8080/api/v1/categories,18,0,0
+1716100112207,19,HTTP Request,200,,Thread Group 2 2-4,text,true,,481,474,1,1,http://localhost:8080/api/v1/categories,19,0,1
+1716100112226,18,HTTP Request,200,,Thread Group 2 2-4,text,true,,481,474,1,1,http://localhost:8080/api/v1/categories,18,0,0
+1716100112244,16,HTTP Request,200,,Thread Group 2 2-4,text,true,,481,474,1,1,http://localhost:8080/api/v1/categories,16,0,0
+1716100112260,18,HTTP Request,200,,Thread Group 2 2-4,text,true,,481,474,1,1,http://localhost:8080/api/v1/categories,18,0,0
+1716100112278,16,HTTP Request,200,,Thread Group 2 2-4,text,true,,481,474,1,1,http://localhost:8080/api/v1/categories,16,0,0
+1716100112294,18,HTTP Request,200,,Thread Group 2 2-4,text,true,,481,474,1,1,http://localhost:8080/api/v1/categories,18,0,0
+1716100112313,17,HTTP Request,200,,Thread Group 2 2-4,text,true,,481,474,1,1,http://localhost:8080/api/v1/categories,17,0,0
+1716100112331,17,HTTP Request,200,,Thread Group 2 2-4,text,true,,481,474,1,1,http://localhost:8080/api/v1/categories,17,0,0
+1716100112348,17,HTTP Request,200,,Thread Group 2 2-4,text,true,,481,474,1,1,http://localhost:8080/api/v1/categories,17,0,0
+1716100112365,16,HTTP Request,200,,Thread Group 2 2-4,text,true,,481,474,1,1,http://localhost:8080/api/v1/categories,16,0,0
