@@ -43,7 +43,6 @@ jobs:
         run: sed -i 's/<name_prometheus>/${{ secrets.NAME_PROMETHEUS }}/' backend/src/main/resources/application-production.properties
 
       - name: build
-
         run: |
           cd ./backend_aboba;
           ls -al;
