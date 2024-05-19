@@ -28,11 +28,13 @@ public abstract class AbstractIntegrationTest {
     private UserRepository userRepository;
 
 
+
     @BeforeEach
     void setupAuthPrincipal() {
         var user = new User();
         user.setUsername("admin");
-        user = userRepository.save(new User());
+        user = userRepository.save(user);
+
         SecurityContext securityContext = Mockito.mock(SecurityContext.class);
         var authentication =
                 new UsernamePasswordAuthenticationToken(user, null, null);
