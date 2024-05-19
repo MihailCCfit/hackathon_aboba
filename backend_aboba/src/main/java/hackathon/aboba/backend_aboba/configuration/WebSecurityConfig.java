@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.AnonymousAuthenticationFilter;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -20,10 +21,7 @@ public class WebSecurityConfig implements WebMvcConfigurer {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
-//                .csrf(csrf -> csrf
-//                        .csrfTokenRepository(new CookieCsrfTokenRepository())
-//                        .csrfTokenRequestHandler(new CsrfTokenRequestAttributeHandler())
-//                )
+                .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(request -> {
                             AuthenticationService.NO_AUTH_ENDPOINTS.forEach(
                                     endpoint -> request.requestMatchers(endpoint).permitAll()
