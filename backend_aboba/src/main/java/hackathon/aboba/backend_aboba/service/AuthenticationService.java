@@ -1,7 +1,5 @@
 package hackathon.aboba.backend_aboba.service;
 
-import java.util.Set;
-
 import hackathon.aboba.backend_aboba.exception.ServerExceptions;
 import hackathon.aboba.backend_aboba.model.User;
 import hackathon.aboba.backend_aboba.utils.JwtUtils;
@@ -11,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.Set;
+
 @Service
 @Slf4j
 @RequiredArgsConstructor
@@ -18,7 +18,8 @@ public class AuthenticationService {
     public static final Set<String> NO_AUTH_ENDPOINTS = Set.of(
             "/api/v1/accounts/login",
             "/api/v1/accounts/refresh",
-            "/error"
+            "/error",
+            "/api/v1/ping"
     );
 
     private final YandexIdService yandexIdService;
