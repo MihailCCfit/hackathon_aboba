@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - YandexIdServiceTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>YandexIdServiceTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/hackathon.aboba.backend_aboba.html">hackathon.aboba.backend_aboba</a> &gt; YandexIdServiceTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">3</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">1.729s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testGetId()</td>
+<td class="success">0.943s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testParseBadToken()</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testParseToken()</td>
+<td class="success">0.782s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>14:27:39.052 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [hackathon.aboba.backend_aboba.YandexIdServiceTest]: YandexIdServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+14:27:39.307 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration hackathon.aboba.backend_aboba.BackendAbobaApplication for test class hackathon.aboba.backend_aboba.YandexIdServiceTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-19T14:27:40.295+07:00  INFO 4984 --- [backend_aboba] [    Test worker] h.a.backend_aboba.YandexIdServiceTest    : Starting YandexIdServiceTest using Java 21.0.2 with PID 4984 (started by Михаил in D:\hackathon_aboba\backend_aboba)
+2024-05-19T14:27:40.298+07:00  INFO 4984 --- [backend_aboba] [    Test worker] h.a.backend_aboba.YandexIdServiceTest    : The following 1 profile is active: &quot;testing&quot;
+2024-05-19T14:27:42.345+07:00  INFO 4984 --- [backend_aboba] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-19T14:27:42.481+07:00  INFO 4984 --- [backend_aboba] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 104 ms. Found 3 JPA repository interfaces.
+2024-05-19T14:27:43.998+07:00  INFO 4984 --- [backend_aboba] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-19T14:27:44.130+07:00  INFO 4984 --- [backend_aboba] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-19T14:27:44.196+07:00  INFO 4984 --- [backend_aboba] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-19T14:27:44.713+07:00  INFO 4984 --- [backend_aboba] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-19T14:27:44.774+07:00  INFO 4984 --- [backend_aboba] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-19T14:27:45.493+07:00  INFO 4984 --- [backend_aboba] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./sampledata user=SA
+2024-05-19T14:27:45.499+07:00  INFO 4984 --- [backend_aboba] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-19T14:27:45.561+07:00  WARN 4984 --- [backend_aboba] [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-19T14:27:48.004+07:00  INFO 4984 --- [backend_aboba] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-19T14:27:48.115+07:00  INFO 4984 --- [backend_aboba] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-19T14:27:49.935+07:00  WARN 4984 --- [backend_aboba] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-19T14:27:50.029+07:00  WARN 4984 --- [backend_aboba] [    Test worker] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 03fd44cd-1f00-4884-92df-a4c7f4d6a79b
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-05-19T14:27:51.291+07:00  INFO 4984 --- [backend_aboba] [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-05-19T14:27:51.421+07:00  INFO 4984 --- [backend_aboba] [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2eba1b7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2efcf7a5, org.springframework.security.web.context.SecurityContextHolderFilter@2b611be6, org.springframework.security.web.header.HeaderWriterFilter@407c9ee8, org.springframework.web.filter.CorsFilter@10aa5f84, org.springframework.security.web.csrf.CsrfFilter@4bd785f, org.springframework.security.web.authentication.logout.LogoutFilter@595f32d0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5c8534f2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@50a7c4c4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@56827682, hackathon.aboba.backend_aboba.configuration.JwtAuthenticationFilter@2479d01b, org.springframework.security.web.access.ExceptionTranslationFilter@494beb3e, org.springframework.security.web.access.intercept.AuthorizationFilter@142efc4d]
+2024-05-19T14:27:52.355+07:00  INFO 4984 --- [backend_aboba] [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./sampledata'
+2024-05-19T14:27:52.557+07:00  INFO 4984 --- [backend_aboba] [    Test worker] h.a.backend_aboba.YandexIdServiceTest    : Started YandexIdServiceTest in 12.832 seconds (process running for 15.906)
+2024-05-19T14:27:54.430+07:00  INFO 4984 --- [backend_aboba] [    Test worker] h.a.b.service.YandexIdService            : Error with yandex token: com.squareup.okhttp.internal.http.RealResponseBody@2db23de7
+</pre>
+</span>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>WARNING: A Java agent has been loaded dynamically (C:\Users\Mihail\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.14.13\979ce25f7d3096a2e82214ba7dc972a05ce7a171\byte-buddy-agent-1.14.13.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.7</a> at 19 мая 2024 г., 14:27:59</p>
+</div>
+</div>
+</body>
+</html>

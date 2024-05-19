@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ServerExceptions.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">backend_aboba</a> &gt; <a href="index.source.html" class="el_package">hackathon.aboba.backend_aboba.exception</a> &gt; <span class="el_source">ServerExceptions.java</span></div><h1>ServerExceptions.java</h1><pre class="source lang-java linenums">package hackathon.aboba.backend_aboba.exception;
+
+import lombok.Getter;
+import org.springframework.http.HttpStatus;
+
+<span class="fc" id="L6">@Getter</span>
+public enum ServerExceptions {
+<span class="fc" id="L8">    NOT_FOUND_EXCEPTION(new ServerException(HttpStatus.NOT_FOUND, &quot;NOT_FOUND_EXCEPTION&quot;)),</span>
+<span class="fc" id="L9">    ACCESS_TOKEN_EXPIRED(new ServerException(HttpStatus.UNAUTHORIZED, &quot;ACCESS_TOKEN_EXPIRED&quot;)),</span>
+<span class="fc" id="L10">    REFRESH_TOKEN_EXPIRED(new ServerException(HttpStatus.UNAUTHORIZED, &quot;REFRESH_TOKEN_EXPIRED&quot;)),</span>
+<span class="fc" id="L11">    ILLEGAL_ACCESS_TOKEN(new ServerException(HttpStatus.UNAUTHORIZED, &quot;ILLEGAL_ACCESS_TOKEN&quot;)),</span>
+<span class="fc" id="L12">    ILLEGAL_REFRESH_TOKEN(new ServerException(HttpStatus.UNAUTHORIZED, &quot;ILLEGAL_REFRESH_TOKEN&quot;)),</span>
+<span class="fc" id="L13">    UNAUTHORIZED(new ServerException(HttpStatus.UNAUTHORIZED, &quot;UNAUTHORIZED&quot;)),</span>
+<span class="fc" id="L14">    INVALID_PARAMETER(new ServerException(HttpStatus.BAD_REQUEST, &quot;INVALID_PARAMETER&quot;)),</span>
+<span class="fc" id="L15">    BAD_REQUEST(new ServerException(HttpStatus.BAD_REQUEST)),</span>
+<span class="fc" id="L16">    NO_ACCESS_TOKEN(new ServerException(HttpStatus.UNAUTHORIZED, &quot;NO_ACCESS_TOKEN&quot;)),</span>
+<span class="fc" id="L17">    ACCESS_TOKEN_PROBLEM(new ServerException(HttpStatus.UNAUTHORIZED, &quot;ACCESS_TOKEN_PROBLEM&quot;)),</span>
+<span class="fc" id="L18">    ILLEGAL_YANDEX_TOKEN(new ServerException(HttpStatus.UNAUTHORIZED, &quot;ILLEGAL_YANDEX_TOKEN&quot;)),</span>
+<span class="fc" id="L19">    ROLE_NOT_EXISTS(new ServerException(HttpStatus.BAD_REQUEST, &quot;ROLE_NOT_EXISTS&quot;)),</span>
+<span class="fc" id="L20">    USER_NOT_FOUND(new ServerException(HttpStatus.NOT_FOUND, &quot;USER_NOT_FOUND&quot;)),</span>
+<span class="fc" id="L21">    BAD_REFRESH_TOKEN(new ServerException(HttpStatus.BAD_REQUEST, &quot;BAD_REFRESH_TOKEN&quot;)),</span>
+<span class="fc" id="L22">    NOT_CURRENT_REFRESH_TOKEN(new ServerException(HttpStatus.FORBIDDEN, &quot;NOT_CURRENT_REFRESH_TOKEN&quot;));</span>
+
+<span class="fc" id="L24">    private final ServerException serverException;</span>
+
+<span class="fc" id="L26">    ServerExceptions(ServerException serverException) {</span>
+<span class="fc" id="L27">        this.serverException = serverException;</span>
+<span class="fc" id="L28">    }</span>
+
+    public void throwException() throws ServerException {
+<span class="fc" id="L31">        throw serverException;</span>
+    }
+
+    public void throwException(String moreInfo) throws ServerException {
+<span class="fc" id="L35">        throw getServerExceptionWithMoreInfo(this.getServerException(), moreInfo);</span>
+    }
+
+    public static ServerException getServerExceptionWithMoreInfo(
+            ServerException serverException,
+            String moreInfo
+    ) {
+<span class="fc" id="L42">        return serverException.getServerExceptionWithMoreInfo(moreInfo);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
